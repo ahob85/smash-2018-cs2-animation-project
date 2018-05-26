@@ -7,11 +7,7 @@ function setup() {
   p5Canvas = createCanvas(800, 600);
   p5Canvas.parent("#p5-canvas");
   myName = select("#my-name");
-  myName.html("Teacher");
-  ballX = width / 2;
-  ballY = height / 2;
-  ballDiameter = 100;
-  ballXVelocity = 10;
+  myName.html("[Your Name Here]");
 }
 
 
