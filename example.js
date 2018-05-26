@@ -23,6 +23,7 @@ function setup() {
 
 function draw() {
   background(0, 255, 0);
+  //drawSquares(random(30, 60)); // Uncomment this line for some fun!
   drawBall();
 }
 
@@ -35,7 +36,7 @@ function drawBall() {
     ballGrowth *= -1;
   }
   ballX += ballXVelocity;
-  ballRadius += ballGrowth;
+  //ballRadius += ballGrowth; // Uncomment this line for a "pulsing" effect!
   var ballDiameter = ballRadius * 2; // local variable
   fill("orange");
   ellipse(ballX, ballY, ballDiameter, ballDiameter);
@@ -43,4 +44,19 @@ function drawBall() {
 
 function getCircumference() {
   return 2 * PI * ballRadius;
+}
+
+function drawSquares(num) {
+  // a "while" loop
+  while(num > 0) {
+    var randomX = random(width); // generate random float (decimal) between 0 and width - 1
+    var randomY = random(height); // generate random float (decimal) between 0 and height - 1
+    var randomLength = random(20, 80); // generate random float (decimal) between 20 (inclusive) and 80 (exclusive)
+    var randomRed = random(255); // amount of red is between 0 (none) and 255 (most)
+    var randomGreen = random(255);
+    var randomBlue = random(255);
+    fill(randomRed, randomGreen, randomBlue);
+    rect(randomX, randomY, randomLength, randomLength);
+    num--;
+  }
 }
