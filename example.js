@@ -47,7 +47,7 @@ function getCircumference() {
 }
 
 function drawSquares(num) {
-  // a "while" loop
+  // a while loop
   while(num > 0) {
     var randomX = random(width); // generate random float (decimal) between 0 and width - 1
     var randomY = random(height); // generate random float (decimal) between 0 and height - 1
@@ -58,5 +58,21 @@ function drawSquares(num) {
     fill(randomRed, randomGreen, randomBlue);
     rect(randomX, randomY, randomLength, randomLength);
     num--;
+  }
+}
+
+// another way of drawing squares, but with a for loop (same exact result)
+// can you spot the (very few) differences?
+function drawSquaresAlt(num) {
+  // a for loop
+  for(var i = 0; i < num; i++) {
+    var randomX = random(width); // generate random float (decimal) between 0 and width - 1
+    var randomY = random(height); // generate random float (decimal) between 0 and height - 1
+    var randomLength = random(20, 80); // generate random float (decimal) between 20 (inclusive) and 80 (exclusive)
+    var randomRed = random(255); // amount of red is between 0 (none) and 255 (most)
+    var randomGreen = random(255);
+    var randomBlue = random(255);
+    fill(randomRed, randomGreen, randomBlue);
+    rect(randomX, randomY, randomLength, randomLength);
   }
 }
